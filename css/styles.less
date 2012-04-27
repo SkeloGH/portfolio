@@ -8,7 +8,7 @@
 	Gy: gray;		M: medium; <- both position & intensity
 */
 @LGy: #e6e6e6;	  @MGy: #c8c8c8;  /* used for making shadows, and body bg*/
-@MBlT: #6699cc;   @MBlB: #386b9e; /* used for the header */
+@MBlT: #6699cc;   @MBlB: #386b9e; /* used for the header bg */
 @LBlT: #e2f1f4;   @LBlB: #d5dddf; /* used for header title */
 @DBlT: #1e2b2e;   @DBlB: #161f21; /* used for step titles */
 @GyT: #59676a;    @GyB: #4e5658;  /* used for subtitle */
@@ -18,11 +18,13 @@
 @DGy: #393939;    @MGy: #737373;  /* footer Titles and links */
 
 /* Miscellaneous */
-@BGU: 5px; 	                        /* Basic Grid Unit */
+@BGU: 5px;							/* Basic grid unit */
+@BFU: 10px;							/* Basic font unit */
 .Lean{ .MgZ; .PgZ; .EmRst; }        /* Cleans the element */
 .MgZ{margin:0}
 .PgZ{padding: 0}
 .EmRst{line-height: 1em}
+.FtRst{ font-size: @BFU; font-weight: bold; font-family: Georgia}
 
 /* gradients */
 .MBl2DBl{ /* header-gradient, includes shadow */
@@ -33,17 +35,40 @@
 	background-image: -o-linear-gradient(@MBlT, @MBlB);
 }
 
+
 .GySh{ /* shadow-gradient */
 	background: @MGy;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MGy', endColorstr='@LGy');
 	background: -moz-linear-gradient(top, @MGy, @LGy);
 	background: -webkit-gradient(linear, left top, left bottom, from(@MGy), to(@LGy));
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MGy', endColorstr='@LGy');
 }
-body{	background: @LGy; .Lean }
+
+/* let's add some styles :D */
+body{	background: @LGy; .Lean; .FtRst; }
 
 header { 
 	height: @BGU*42;
-	padding-bottom: @BGU; 
-	.Lean;  .MBl2DBl;  
-		h1{.Lean}
+	padding-bottom: @BGU;
+	.Lean;  .MBl2DBl;
+		figure, figure img{.Lean}
+		h1{
+			font-size: @BFU*3.829;
+			position: relative;
+			.Lean;
+		}
+		h1 a{
+			text-decoration:none;
+			font-size: @BFU*3.829;
+			position: absolute;
+			top:0; left: 0;
+			-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
+		}
+		h1 a:link, h1 a:visited, h1 a:hover,h1 a:active {
+			color: @LBlB;
+		}
+		h1:after{
+			content: "I'm Aaron &";
+			color: @LBlB;
+			text-shadow: 2px 2px 2px @MBlB;
+		}
 }
