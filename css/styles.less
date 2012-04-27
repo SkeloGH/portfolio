@@ -7,7 +7,7 @@
 					B: bottom; <- position 
 	Gy: gray;		M: medium; <- both position & intensity
 */
-@MGy: #e6e6e6;					  /* used as background */
+@LGy: #e6e6e6;	  @MGy: #c8c8c8;  /* used for making shadows, and body bg*/
 @MBlT: #6699cc;   @MBlB: #386b9e; /* used for the header */
 @LBlT: #e2f1f4;   @LBlB: #d5dddf; /* used for header title */
 @DBlT: #1e2b2e;   @DBlB: #161f21; /* used for step titles */
@@ -17,41 +17,27 @@
 @MLBl: #6ba9cd;   @DRd: #c41016;  /* header letters borders and red sign */
 @DGy: #393939;    @MGy: #737373;  /* footer Titles and links */
 
-/*	Gradients */ /*<<<<<<<<<<<<<<<<<<<<<<<<<< I am here !!!!!!!!!!!!!!!!!!        */
-.gradient(@top:@MBlT, @bottom:@MBlB, @ribbon: @bottom, @shadIn:@GyT, @shadOut: @fallback:@from) {
-	@foxG: "-moz-linear-gradient(top, {0}, {1}) no-repeat scroll 0 0 transparent";
-  	@webkG: "-webkit-gradient(linear,left top,left bottom,color-stop(0, {0}),color-stop(1, {1}))  no-repeat scroll 0 0 transparent";
-  	@ieG: "progid:DXImageTransform.Microsoft.gradient(startColorstr='{0}', endColorstr='{1}')";
-  	@ie8G: "\"progid:DXImageTransform.Microsoft.gradient(startColorstr='{0}', endColorstr='{1}')\"";
 
-  background: @fallback;                              /* for non-css3 browsers */
-  background: formatstring(@ffgradient, @from, @to);  /* FF3.6+ */
-  background: formatstring(@wkgradient, @from, @to);  /* Saf4+, Chrome */
-  filter: formatstring(@iegradient, @from, @to);      /* IE6,IE7 */
-  -ms-filter: formatstring(@ie8gradient, @from, @to); /* IE8 */ 
+/* gradients */
+.MBl2DBl(@MBlT: #6699cc, @MBlB: #386b9e){ /* header-gradient */
+	background: @MBlT;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MBlT', endColorstr='@MBlB');
+	background: -moz-linear-gradient(top, @MBlT, @MBlB);
+	background: -webkit-gradient(linear, left top, left bottom, from(@MBlT), to(@MBlB));
+	background-image: -o-linear-gradient(@MBlT, @MBlB);
 }
 
-
-.topBlue (@MBlT: #6699cc, @MBlB: #386b9e) {
-	background: @MBlT; /* Old browsers */
-	background: -moz-linear-gradient(top,  @MBlT 0%, @MBlB 97%, @MBlT 96%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@MBlT), color-stop(97%,@MBlB), color-stop(97%,@MBlT)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  @MBlT 0%,@MBlB 97%,@MBlT 96%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  @MBlT 0%,@MBlB 97%,@MBlT 96%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  @MBlT 0%,@MBlB 97%,@MBlT 96%); /* IE10+ */
-	background: linear-gradient(top,  @MBlT 0%,@MBlB 97%,@MBlT 96%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@MBlT', endColorstr='@MBlB',GradientType=0 ); /* IE6-9 */
+.GySh(@LGy: #e6e6e6, @MGy: #c8c8c8){ /* shadow-gradient */
+	background: @MGy;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MGy', endColorstr='@LGy');
+	background: -moz-linear-gradient(top, @MGy, @LGy);
+	background: -webkit-gradient(linear, left top, left bottom, from(@MGy), to(@LGy));
 }
 
-/* header styles */
+body{
+	background: @LGy;
+}
+
 header {
-	.topBlue;
-}
-
-
-
-/* usage */
-
-.some-selector {
-  .gradient(#454545, #000, #454545);
+  .GySh;
 }
