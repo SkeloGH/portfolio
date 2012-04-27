@@ -17,27 +17,33 @@
 @MLBl: #6ba9cd;   @DRd: #c41016;  /* header letters borders and red sign */
 @DGy: #393939;    @MGy: #737373;  /* footer Titles and links */
 
+/* Miscellaneous */
+@BGU: 5px; 	                        /* Basic Grid Unit */
+.Lean{ .MgZ; .PgZ; .EmRst; }        /* Cleans the element */
+.MgZ{margin:0}
+.PgZ{padding: 0}
+.EmRst{line-height: 1em}
 
 /* gradients */
-.MBl2DBl(@MBlT: #6699cc, @MBlB: #386b9e){ /* header-gradient */
+.MBl2DBl{ /* header-gradient, includes shadow */
 	background: @MBlT;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MBlT', endColorstr='@MBlB');
-	background: -moz-linear-gradient(top, @MBlT, @MBlB);
+	background: -moz-linear-gradient(top, @MBlT, @MBlB 94%, @MBlT 94%, @MBlT 98%, @MGy 98%, @LGy 100%);
 	background: -webkit-gradient(linear, left top, left bottom, from(@MBlT), to(@MBlB));
 	background-image: -o-linear-gradient(@MBlT, @MBlB);
 }
 
-.GySh(@LGy: #e6e6e6, @MGy: #c8c8c8){ /* shadow-gradient */
+.GySh{ /* shadow-gradient */
 	background: @MGy;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MGy', endColorstr='@LGy');
 	background: -moz-linear-gradient(top, @MGy, @LGy);
 	background: -webkit-gradient(linear, left top, left bottom, from(@MGy), to(@LGy));
 }
+body{	background: @LGy; .Lean }
 
-body{
-	background: @LGy;
-}
-
-header {
-  .GySh;
+header { 
+	height: @BGU*42;
+	padding-bottom: @BGU; 
+	.Lean;  .MBl2DBl;  
+		h1{.Lean}
 }
