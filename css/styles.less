@@ -3,36 +3,60 @@
 /* let's add some styles :D */
 body{	background: @LGy; .Lean; .FtRst; }
 /* layout header styles */
-header { 	height: @BGU*42;	padding-bottom: @BGU;	.Lean; 
+header { 	
+	.Lean;
+	height: @BGU*42; 
+	padding-bottom: @BGU;
 	
 	figure{
-		.Lean; width: @BGU*35;
+		.Lean; 
+		background-image: url('../img/sprites.png');
+		background-position: 0 0;
+		float: left;
+		height: @BGU*50;
+		margin: @BGU*2 0 0 @BGU*6;
+		width: @BGU*63;
 		img{
 			width: @BGU*30;
 		}
 	}
 	br{ .Lean; line-height: @BLH*3; }
 	h1{	.gradifyInit;	.Lean;
-		 width: @BFU*27;
+		margin-top: @BGU*6;
+		width: @BGU*54;
+		
 		a{	.gradifyMe;
 			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
 			&:after{.gradifyThis;}
 		}
 	}
-
-	h2{	.gradifyInit;	.Lean;
-		height: 1em; width: @BFU*5; 
-		a{	.gradifyMe;			
+	/*********** big heading letters *********/
+	h2{	
+		.gradifyInit;	.Lean;
+		@FSX: 10;  /*				font-size zoom 		*/
+		font-size: @BFU*@FSX;
+		height: @BGU*20; 
+		margin-top: @BGU*6; 
+		width: @BGU*10; 
+		
+		a{	.gradifyMe;
+			font-size: @BFU*@FSX;
 			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
-			&:after{.gradifyThis;}
-			&:not(.active){ display: none;}
+			&:after{.gradifyThis; color: @DBlT; }/* gradient color */
+			&:not(.active){ display: none}
 		}
 	}
-
+	/************* header less-than sign *********/
 	h3{	.gradifyInit;	.Lean;
-		height: 1em; width: @BFU*5; 
+		@FSX: 20;  /*				font-size zoom 		*/
+		font-size: @BFU*@FSX;
+		height: 1em; 
+		margin: @BGU*-6 @BGU*0 @BGU*0 @BGU*-10; 
+		width: @BGU*15; 
+
 		a{	.gradifyMe;
-			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
+			font-size: @BFU*@FSX;
+			&:link, &:visited, &:hover, &:active {	color: @DRd;}
 			&:after{.gradifyThis;}
 		}
 	}
