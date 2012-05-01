@@ -1,67 +1,58 @@
-
-/* Color names, abbreviations in camelCase: 
-
-	
-	
-
-	Gy: gray;		M: medium; <- both position & intensity
-	Bl: blue;		D: deep;   <- intensity
-	Gn: green;		L: light;  <- intensity
-	Rd: red;		T: top;    <- position
-					B: bottom; <- position 
-*/
-@LGy: #e6e6e6;	  @MGy: #c8c8c8;  /* used for making shadows, and body bg*/
-@LBlT: #e2f1f4;   @LBlB: #d5dddf; /* used for menu item title */
-@DBlT:#202e31;	  @DBlB:#131b1d;  /* used for titles */
-@GyT: #5a696c;    @GyB: #4e5658;  /* used for subtitle */
-@LGnT: #dbe3e5;   @LGnL: #d4d9da; /* used for main menu items */
-@DGnT: #aacfd6;   @DGnL: #8da1a5; /* used for active selection */
-@MLBl: #6ba9cd;   @DRd: #c41016;  /* header letters borders and red sign */
-@DGy: #393939;    @MGy: #737373;  /* footer Titles and links */
-
-/* Miscellaneous */
-@BGU: 5px;							/* Basic grid unit */
-@BFU: 10px;							/* Basic font unit */
-.Lean{ .MgZ; .PgZ; .EmRst; }        /* Cleans the element */
-.MgZ{margin:0}
-.PgZ{padding: 0}
-.EmRst{line-height: 1em}
-.FtRst{ font-size: @BFU; font-weight: bold; font-family: Georgia}
-
-/* gradients */
-.GySh{ /* shadow-gradient */
-	background: @MGy;
-	background: -moz-linear-gradient(top, @MGy, @LGy);
-	background: -webkit-gradient(linear, left top, left bottom, from(@MGy), to(@LGy));
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MGy', endColorstr='@LGy');
-}
+@import "theme";
 
 /* let's add some styles :D */
 body{	background: @LGy; .Lean; .FtRst; }
-
+/* layout header styles */
 header { 
 	height: @BGU*42;
 	padding-bottom: @BGU;
+	
 	.Lean; 
-		figure, figure img{.Lean}
-		h1{
-			font-size: @BFU*3.829;
-			position: relative;
-			.Lean;
-		}
-		h1 a{
+	figure, figure img{.Lean} /* clean image default values */
+	
+	h1{
+		font-size: @BFU*3.829;
+		position: relative;
+		.Lean;
+		
+		a{
 			text-decoration:none;
 			font-size: @BFU*3.829;
 			position: absolute;
 			top:0; left: 0;
 			-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
+			
+			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
+			&:after{
+				content: attr(title);		color: @DBlT;
+				text-shadow: 1px 1px 1px @MGy;
+				position: absolute;
+				top:0; left: 0;
+			}
 		}
-		h1 a:link, h1 a:visited, h1 a:hover,h1 a:active {
-			color: @LBlB;
+	} 									/* heading siblings defines text gradient //webkit-based only */
+
+	h2{
+		font-size: @BFU*3.829;
+		position: relative;
+		.Lean;
+		
+		a{
+			text-decoration:none;
+			font-size: @BFU*3.829;
+			position: absolute;
+			top:0; left: 0;
+			-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
+			
+			&:first{ display: none; }
+			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
+			&:after{
+				content: attr(title);		color: @DBlT;
+				text-shadow: 1px 1px 1px @MGy;
+				position: absolute;
+				top:0; left: 0;
+				display: none;
+			}
 		}
-		h1:after{
-			content: "I'm Aaron &";
-			color: @LBlB;
-			text-shadow: 2px 2px 2px @MBlB;
-		}
+	}
 }
