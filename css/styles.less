@@ -3,56 +3,37 @@
 /* let's add some styles :D */
 body{	background: @LGy; .Lean; .FtRst; }
 /* layout header styles */
-header { 
-	height: @BGU*42;
-	padding-bottom: @BGU;
+header { 	height: @BGU*42;	padding-bottom: @BGU;	.Lean; 
 	
-	.Lean; 
-	figure, figure img{.Lean} /* clean image default values */
-	
-	h1{
-		font-size: @BFU*3.829;
-		position: relative;
-		.Lean;
-		
-		a{
-			text-decoration:none;
-			font-size: @BFU*3.829;
-			position: absolute;
-			top:0; left: 0;
-			-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
-			
-			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
-			&:after{
-				content: attr(title);		color: @DBlT;
-				text-shadow: 1px 1px 1px @MGy;
-				position: absolute;
-				top:0; left: 0;
-			}
+	figure{
+		.Lean; width: @BGU*35;
+		img{
+			width: @BGU*30;
 		}
-	} 									/* heading siblings defines text gradient //webkit-based only */
-
-	h2{
-		font-size: @BFU*3.829;
-		position: relative;
-		.Lean;
-		
-		a{
-			text-decoration:none;
-			font-size: @BFU*3.829;
-			position: absolute;
-			top:0; left: 0;
-			-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
-			
-			&:first{ display: none; }
+	}
+	br{ .Lean; line-height: @BLH*3; }
+	h1{	.gradifyInit;	.Lean;
+		 width: @BFU*27;
+		a{	.gradifyMe;
 			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
-			&:after{
-				content: attr(title);		color: @DBlT;
-				text-shadow: 1px 1px 1px @MGy;
-				position: absolute;
-				top:0; left: 0;
-				display: none;
-			}
+			&:after{.gradifyThis;}
+		}
+	}
+
+	h2{	.gradifyInit;	.Lean;
+		height: 1em; width: @BFU*5; 
+		a{	.gradifyMe;			
+			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
+			&:after{.gradifyThis;}
+			&:not(.active){ display: none;}
+		}
+	}
+
+	h3{	.gradifyInit;	.Lean;
+		height: 1em; width: @BFU*5; 
+		a{	.gradifyMe;
+			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
+			&:after{.gradifyThis;}
 		}
 	}
 }

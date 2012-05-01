@@ -19,6 +19,7 @@
 /* Basic elements, define the theme specs */
 @BGU: 5px;							/* Basic grid unit */
 @BFU: 10px;							/* Basic font unit */
+@BLH: 1em;							/* Basic line height */
 .Lean{ .MgZ; .PgZ; .EmRst; }        /* Cleans the element */
 .MgZ{margin:0}
 .PgZ{padding: 0}
@@ -33,10 +34,21 @@
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MGy', endColorstr='@LGy');
 }
 
-.gradify{
+/* these ones are set to apply gradient styles, 
+	see styles.less for information about how to use it */
+/* first we initialize the element */
+.gradifyInit{ font-size: @BFU*3.829;  display: block; float: left; position: relative;}
+.gradifyMe{
 	text-decoration:none;
 	font-size: @BFU*3.829;
 	position: absolute;
 	top:0; left: 0;
 	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
+}
+.gradifyThis{
+	content: attr(title);		
+	color: @DBlT;
+	text-shadow: 1px 1px 1px @MGy;
+	position: absolute;
+	top:0; left: 0;
 }
