@@ -1,26 +1,30 @@
 @import "theme";
 
 /* let's add some styles :D */
-body{	background: @LGy; .Lean; .FtRst; }
+body{	background: @LGy; .Lean; .FtRst; min-width:@BGU*208; }
 /* layout header styles */
 header { 	
 	.Lean;
-	height: @BGU*42; 
+	height: @BGU*30; 
 	padding-bottom: @BGU;
 	
+	hgroup{	height: @BGU*30; width:@BGU*170; }
+
 	figure{
 		.Lean; 
 		background-image: url('../img/sprites.png');
 		background-position: 0 0;
 		float: left;
 		height: @BGU*50;
-		margin: @BGU*2 0 0 @BGU*6;
+		margin: @BGU*2 @BGU*16 0 @BGU*6;
 		width: @BGU*63;
 		img{
 			width: @BGU*30;
 		}
 	}
+
 	br{ .Lean; line-height: @BLH*3; }
+
 	h1{	.gradifyInit;	.Lean;
 		margin-top: @BGU*6;
 		width: @BGU*54;
@@ -37,7 +41,7 @@ header {
 		font-size: @BFU*@FSX;
 		height: @BGU*20; 
 		margin-top: @BGU*6; 
-		width: @BGU*10; 
+		width: @BGU*14; 
 		
 		a{	.gradifyMe;
 			font-size: @BFU*@FSX;
@@ -48,16 +52,24 @@ header {
 	}
 	/************* header less-than sign *********/
 	h3{	.gradifyInit;	.Lean;
-		@FSX: 20;  /*				font-size zoom 		*/
+		@FSX: 15;  /*				font-size zoom 		*/
 		font-size: @BFU*@FSX;
-		height: 1em; 
-		margin: @BGU*-6 @BGU*0 @BGU*0 @BGU*-10; 
+		height: @BFU*13; 
+		margin: @BGU*-1 @BGU*0 @BGU*0 @BGU*-14; 
 		width: @BGU*15; 
 
 		a{	.gradifyMe;
 			font-size: @BFU*@FSX;
+			height: @BFU*15; 
 			&:link, &:visited, &:hover, &:active {	color: @DRd;}
 			&:after{.gradifyThis;}
 		}
+	}
+
+	hr{
+		border: solid @BGU @DBlT;
+		float: left;
+		line-height:1em;
+		width: @BGU*83;
 	}
 }
