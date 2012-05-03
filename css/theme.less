@@ -22,6 +22,7 @@
 @BLH: 1em;							/* Basic line height */
 @FSX: 1;							/* Default Font-size zoom, used when multiplying */
 .Lean{ .MgZ; .PgZ; .EmRst; }        /* Cleans the element */
+.BlockFix{ display: block; overflow: hidden;}
 .MgZ{margin:0}
 .PgZ{padding: 0}
 .EmRst{line-height: 1em}
@@ -40,7 +41,7 @@
 /* These ones are set to apply gradient styles, 
 	see styles.less for example of how to apply it */
 /* first we initialize the element */
-.gradifyInit{ font-size: @BFU*3.829;  display: block; float: left; position: relative;}
+.gradifyInit{   display: block; float: left; position: relative;}
 .gradifyMe{
 	text-decoration:none;
 	font-size: @BFU*3.829;

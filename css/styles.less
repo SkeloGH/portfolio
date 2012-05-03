@@ -1,14 +1,15 @@
 @import "theme";
 
 /* let's add some styles :D */
-body{	background: @LGy; .Lean; .FtRst; min-width:@BGU*208; }
+body{	background: @LGy; .Lean; .FtRst; min-width:@BGU*196; text-align: center; }
 /* layout header styles */
 header { 	
-	.Lean;
-	height: @BGU*30; 
+	.Lean;.BlockFix;
+	height: auto; 
 	padding-bottom: @BGU;
+	width: auto;
 	
-	hgroup{	height: @BGU*30; width:@BGU*170; }
+	hgroup{	height: auto; width:auto; .BlockFix;  }
 
 	figure{
 		.Lean; 
@@ -26,6 +27,8 @@ header {
 	br{ .Lean; line-height: @BLH*3; }
 
 	h1{	.gradifyInit;	.Lean;
+		@FSX: 2.9;  /*				font-size zoom 		*/
+		font-size: @BFU*@FSX;
 		margin-top: @BGU*6;
 		width: @BGU*54;
 		
@@ -37,9 +40,9 @@ header {
 	/*********** big heading letters *********/
 	h2{	
 		.gradifyInit;	.Lean;
-		@FSX: 10;  /*				font-size zoom 		*/
+		@FSX: 14;  /*				font-size zoom 		*/
 		font-size: @BFU*@FSX;
-		height: @BGU*20; 
+		height: @BGU*28; 
 		margin-top: @BGU*6; 
 		width: @BGU*14; 
 		
@@ -52,10 +55,10 @@ header {
 	}
 	/************* header less-than sign *********/
 	h3{	.gradifyInit;	.Lean;
-		@FSX: 15;  /*				font-size zoom 		*/
+		@FSX: 18;  /*				font-size zoom 		*/
 		font-size: @BFU*@FSX;
 		height: @BFU*13; 
-		margin: @BGU*-1 @BGU*0 @BGU*0 @BGU*-14; 
+		margin: @BGU*0 @BGU*0 @BGU*0 @BGU*-14; 
 		width: @BGU*15; 
 
 		a{	.gradifyMe;
@@ -70,6 +73,8 @@ header {
 		border: solid @BGU @DBlT;
 		float: left;
 		line-height:1em;
-		width: @BGU*83;
+		width: @BGU*110;
 	}
 }
+
+/**/
