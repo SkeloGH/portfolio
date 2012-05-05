@@ -2,9 +2,10 @@
 
 /* let's add some styles :D */
 body{	background: @LGy; .Lean; .FtRst; min-width:@BGU*196; text-align: center; }
+
 /* layout header styles */
 header { 	
-	.Lean;.BlockFix;
+	.Lean;	.BlockFix;
 	height: auto; 
 	padding-bottom: @BGU;
 	width: auto;
@@ -12,69 +13,102 @@ header {
 	hgroup{	height: auto; width:auto; .BlockFix;  }
 
 	figure{
-		.Lean; 
+		.Lean; 	.FLeft;
 		background-image: url('../img/sprites.png');
 		background-position: 0 0;
-		float: left;
 		height: @BGU*50;
 		margin: @BGU*2 @BGU*16 0 @BGU*6;
 		width: @BGU*63;
-		img{
-			width: @BGU*30;
-		}
+		img { width: @BGU*30; }
 	}
 
 	br{ .Lean; line-height: @BLH*3; }
 
-	h1{	.gradifyInit;	.Lean;
+	h1{	
 		@FSX: 2.9;  /*				font-size zoom 		*/
-		font-size: @BFU*@FSX;
+		.gradifyInit;	.Lean;	.SetFont(@FSX);
 		margin-top: @BGU*6;
 		width: @BGU*54;
 		
 		a{	.gradifyMe;
 			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
-			&:after{.gradifyThis;}
+			&:after{.gradifyThis;.ShadeMe;}
 		}
 	}
+
 	/*********** big heading letters *********/
 	h2{	
-		.gradifyInit;	.Lean;
-		@FSX: 14;  /*				font-size zoom 		*/
-		font-size: @BFU*@FSX;
+		@FSX: 14;
+		.gradifyInit;	.Lean;	.SetFont(@FSX);
 		height: @BGU*28; 
-		margin-top: @BGU*6; 
+		margin-top: @BGU*6.8; 
 		width: @BGU*14; 
 		
-		a{	.gradifyMe;
-			font-size: @BFU*@FSX;
+		a{	.gradifyMe;	.SetFont(@FSX);
 			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
-			&:after{.gradifyThis; color: @DBlT; }/* gradient color */
+			&:after{.gradifyThis;.ShadeMe; color: @DBlT; }/* gradient color */
 			&:not(.active){ display: none}
 		}
 	}
+
 	/************* header less-than sign *********/
-	h3{	.gradifyInit;	.Lean;
-		@FSX: 18;  /*				font-size zoom 		*/
-		font-size: @BFU*@FSX;
-		height: @BFU*13; 
-		margin: @BGU*0 @BGU*0 @BGU*0 @BGU*-14; 
+	h3{	
+		@FSX: 18;
+		.gradifyInit;	.Lean;	.SetFont(@FSX);
+		height: @BGU*26; 
+		margin: 0 0 0 @BGU*-14; 
 		width: @BGU*15; 
 
-		a{	.gradifyMe;
-			font-size: @BFU*@FSX;
+		a{	.gradifyMe;		.SetFont(@FSX);
 			height: @BFU*15; 
 			&:link, &:visited, &:hover, &:active {	color: @DRd;}
-			&:after{.gradifyThis;}
+			&:after{.gradifyThis;.ShadeMe;}
 		}
 	}
 
 	hr{
+		.FLeft; 
 		border: solid @BGU @DBlT;
-		float: left;
 		line-height:1em;
-		width: @BGU*110;
+		margin-top: @BGU*.5;
+		width:(@GridCol*7)+(@GridSp*6);
+	}
+} 	/* header end */
+
+
+section { 		/* section module global attributes */
+	.BlockFix;
+	.FLeft;
+ }
+#steps{
+
+	min-width:(@GridCol*5)+(@GridSp*5);
+	margin: @BGU*2 @BGU*16 0 @BGU*6;
+	padding-top: @BGU*25;
+	text-align: left;
+
+	h1{	
+		@FSX: 5;
+		.Lean;.ClearFix;
+		.SetFont(@FSX); 
+		.ShadeMe;
+		color: @DBlT;
+	}
+
+	h2{	
+		@FSX: 4;
+		.Lean; .ClearFix;	.SetFont(@FSX);
+		.Altfont; .FtWN;
+		color: @GyB;
+		margin-top:@BGU*4;
 	}
 }
 
-/**/
+/* navigation elements */
+
+nav{
+	@FSX: 18;
+	.FLeft;
+	width:@GridCol;
+}
+hr{.ClearFix; }

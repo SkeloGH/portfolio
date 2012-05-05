@@ -9,24 +9,33 @@
 */
 @LGy: #e6e6e6;	  @MGy: #c8c8c8;  /* used for making shadows, and body bg*/
 @LBlT: #e2f1f4;   @LBlB: #d5dddf; /* used for menu item title */
-@DBlT:#202e31;	  @DBlB:#131b1d;  /* used for titles */
-@MLBl: #6ba9cd;   @DRd: #c41016;  /* header letters borders and red sign */
+@DBlT:#202e31;	  @DBlB:#131b1d;  /* used for title gradient */
+@MLBl: #6ba9cd;   @DRd: #c41016;  /* header borders and red sign */
 @GyT: #5a696c;    @GyB: #4e5658;  /* used for subtitle */
 @LGnT: #dbe3e5;   @LGnL: #d4d9da; /* used for main menu items */
 @DGnT: #aacfd6;   @DGnL: #8da1a5; /* used for active selection */
 @DGy: #393939;    @MGy: #737373;  /* footer Titles and links */
 
 /* Basic elements, define the theme specs */
-@BGU: 5px;							/* Basic grid unit */
+@BGU: 5px;							/* Basic graphics unit */
+@GridCol: 70px;						/* Grid column is 70px wide */
+@GridSp: 10px;						/* Space between columns */
 @BFU: 10px;							/* Basic font unit */
 @BLH: 1em;							/* Basic line height */
 @FSX: 1;							/* Default Font-size zoom, used when multiplying */
-.Lean{ .MgZ; .PgZ; .EmRst; }        /* Cleans the element */
-.BlockFix{ display: block; overflow: hidden;}
-.MgZ{margin:0}
-.PgZ{padding: 0}
-.EmRst{line-height: 1em}
-.FtRst{ font-size: @BFU; font-weight: bold; font-family: Georgia}
+
+.Altfont{ 			font-family: "Calibri";}
+.BlockFix{			display: block; overflow: hidden}
+.ClearFix { 		clear: both;}
+.EmRst{				line-height: 1em}
+.FLeft{				float:left;}
+.FtRst{				font-size: @BFU; font-weight: bold; font-family: Georgia}
+.FtWN{ 				font-weight: normal;}
+.MgZ{				margin:0}
+.Lean{      		.MgZ; .PgZ; .EmRst; }        /* Cleans the element */
+.PgZ{				padding: 0}
+.ShadeMe{   		text-shadow: 1px 1px 1px @MGy; }
+.SetFont(@FSX:1){ 	font-size: @BFU*@FSX; }
 
 /* gradients */
 .GySh{ /* shadow-gradient */
@@ -51,7 +60,6 @@
 }
 .gradifyThis{
 	content: attr(title);		
-	text-shadow: 1px 1px 1px @MGy;
 	position: absolute;
 	top:0; left: 0;
 }
