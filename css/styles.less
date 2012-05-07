@@ -31,7 +31,7 @@ header {
 		width: @BGU*54;
 		
 		a{	.gradifyMe;
-			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
+			&:link, &:visited, &:hover, &:active {	color: @DBlB;}
 			&:after{.gradifyThis;.ShadeMe;}
 		}
 	}
@@ -45,8 +45,8 @@ header {
 		width: @BGU*14; 
 		
 		a{	.gradifyMe;	.SetFont(@FSX);
-			&:link, &:visited, &:hover, &:active {	color: @DBlT;}
-			&:after{.gradifyThis;.ShadeMe; color: @DBlT; }/* gradient color */
+			&:link, &:visited, &:hover, &:active {	color: @DBlB;}
+			&:after{.gradifyThis;.ShadeMe; color: @DBlB; }/* gradient color */
 			&:not(.active){ display: none}
 		}
 	}
@@ -68,7 +68,7 @@ header {
 
 	hr{
 		.FLeft; 
-		border: solid @BGU @DBlT;
+		border: solid @BGU @DBlB;
 		line-height:1em;
 		margin-top: @BGU*.5;
 		width:(@GridCol*7)+(@GridSp*6);
@@ -83,16 +83,16 @@ section { 		/* section module global attributes */
 #steps{
 
 	min-width:(@GridCol*5)+(@GridSp*5);
-	margin: @BGU*2 @BGU*16 0 @BGU*6;
+	margin: @BGU*2 0 0 @BGU*6;
 	padding-top: @BGU*25;
 	text-align: left;
 
 	h1{	
-		@FSX: 5;
+		@FSX: 5.5;
 		.Lean;.ClearFix;
 		.SetFont(@FSX); 
 		.ShadeMe;
-		color: @DBlT;
+		color: @DBlB;
 	}
 
 	h2{	
@@ -107,8 +107,25 @@ section { 		/* section module global attributes */
 /* navigation elements */
 
 nav{
-	@FSX: 18;
-	.FLeft;
-	width:@GridCol;
+	.Lean; .FLeft;
+	background-image: url('../img/sprites.png');
+	background-position: 0 -261px;
+	height: @BGU*96;
+	width:@GridCol+@GridSp*2+@BGU;   /* just because ;) */
+
+	button{
+		@FSX: 5.2; @X:-1px; @Y:1px; @S:1px; @C:rgba(21, 30, 34, 0.5);
+		.Lean;.BlockFix;.FtRst;.SetFont(@FSX);.ShadeMe(@X, @Y, @S, @C);
+		color: rgba(227, 231, 232, .9);
+		background: none;
+		border: none;
+		height: @BGU*11.6;
+		width: @GridCol;
+	}
+		.active{
+			@X:-1px; @Y:1px; @S:3px; @C:@MGy;
+			.ShadeMe(@X, @Y, @S, @C);
+			color: @DBlB;
+		}
 }
 hr{.ClearFix; }

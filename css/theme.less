@@ -34,7 +34,7 @@
 .MgZ{				margin:0}
 .Lean{      		.MgZ; .PgZ; .EmRst; }        /* Cleans the element */
 .PgZ{				padding: 0}
-.ShadeMe{   		text-shadow: 1px 1px 1px @MGy; }
+.ShadeMe(@X:1px, @Y:1px, @S:1px, @C:@GyT){ text-shadow: @X @Y @S @C }
 .SetFont(@FSX:1){ 	font-size: @BFU*@FSX; }
 
 /* gradients */
