@@ -44,49 +44,49 @@
 		<!--menu start-->
 	<nav>
 		<!--experimental-->
-		<button class="active" type="button" title="About me" onclick="window.location='#About'">A</button>
-		<button type="button" title="Skills" onclick="window.location='#Skills'">S</button>
-		<button type="button" title="Gallery" onclick="window.location='#Gallery'">G</button>
-		<button type="button" title="Tools" onclick="window.location='#Tools'">T</button>
-		<button type="button" title="Projects" onclick="window.location='#Projects'">P</button>
-		<button type="button" title="Contact me" onclick="window.location='#Contact'">C</button>
+		<button content="A" class="active" type="button" title="About me" onclick="window.location='#About'">A</button>
+		<button content="S" type="button" title="Skills" onclick="window.location='#Skills'">S</button>
+		<button content="G" type="button" title="Gallery" onclick="window.location='#Gallery'">G</button>
+		<button content="T" type="button" title="Tools" onclick="window.location='#Tools'">T</button>
+		<button content="P" type="button" title="Projects" onclick="window.location='#Projects'">P</button>
+		<button content="C" type="button" title="Contact me" onclick="window.location='#Contact'">C</button>
 	</nav>
 		<!--menu end-->
 		<!--slideshow start-->
-		<button type="button" onclick="window.location='#prev'">{</button>
+		<button id="prev" type="button"></button>
 	<section id="About">
 		<h4>#aaron.gonzalez{</h4>
 		<dl>
-			<dt>Age:</dt><dd>28 years-old;</dd>
-			<dt>Marital-status:</dt><dd>Cohabiting;</dd>
-			<dt>Study-background:</dt><dd>Designer;</dd>
-			<dt>Localization:</dt><dd>GDL-Mexico;</dd>
-			<dt>Education-source:</dt><dd>MX('MX_City/UNITEC.univ');</dd>
 			<dt>Activity:</dt><dd>Front-end dev;</dd>
-			<dt>Available:</dt><dd>True;</dd>
-			<dt>Availability-allowance:</dt><dd>15 working-days;</dd>
+			<dt>Age:</dt><dd>28 years-old;</dd>
+			<dt>Available:</dt><dd>true;</dd>
+			<dt>Job-switch-span:</dt><dd>15 days;</dd>
 			<dt>Language:</dt><dd>100% es 90% en;</dd>
-			<dt>Change-residence:</dt><dd>true;</dd>
-			<dt>Travel:</dt><dd> True;</dd>
-			<dt>Visa:</dt><dd>True USA-tourist;</dd>
+			<dt>Localization:</dt><dd>Jal-Mexico;</dd>
+			<dt>Marital-status:</dt><dd>Cohabiting;</dd>
+			<dt>Relocation:</dt><dd>true;</dd>
+			<dt>Study-bkg:</dt><dd>Designer;</dd>
+			<dt>Study-source:</dt><dd>MX_City/UNITEC.univ;</dd>
+			<dt>Visa:</dt><dd>USA-tourist;</dd>
+			<dt>Travel-availability:</dt><dd> true;</dd>
 		</dl>
 		<h4>}</h4>
 	</section>
 
-	<section id="Skills">
+	<section id="Skills" class="active">
 		<h4>function skills(){</h4>
 		<dl>
-			<dt>html:</dt><dd>"html4-html5";</dd>
-			<dt>this.css:</dt><dd>'pixel-perfect'+'x-browser'+'x-platform'+val(10);</dd>
-			<dt>var language=</dt><dd>'english'+val(10);</dd>
-			<dt>var scripting=</dt><dd>'jQuery'+val(7);</dd>
-			<dt>photoshop:</dt><dd>'proficient'+val(9);</dd>
-			<dt>illustrator:</dt><dd>'intermediate'+val(6);</dd>
-			<dt>web-services:</dt><dd>'basic'+val(4);</dd>
-			<dt>3DSMax:</dt><dd>'basic'+val(4);</dd>
-			<dt>CMS.manage:</dt><dd>'Wordpres'+'Joomla'+'eShops'+'TeamSite';</dd>
-			<dt>Mailing:</dt><dd>'Responsys'+val(9);</dd>
-			<dt>OS:</dt><dd>'Windows'+val(9), 'OSX'+val(8), 'linux'+val(7)</dd>
+			<dt>html:</dt><dd>html4-html5;</dd>
+			<dt>css:</dt><dd>px-perfect, Xbrowser, Xdevice;</dd>
+			<dt>language:</dt><dd>english(10);</dd>
+			<dt>scripting:</dt><dd>jQuery(7);</dd>
+			<dt>photoshop:</dt><dd>proficient(8);</dd>
+			<dt>illustrator:</dt><dd>intermediate(6);</dd>
+			<dt>web-services:</dt><dd>basic;</dd>
+			<dt>3DSMax:</dt><dd>basic(4);</dd>
+			<dt>CMS.manage:</dt><dd>Wordpres, Joomla, eShops, TeamSite;</dd>
+			<dt>Mailing:</dt><dd>Responsys(9);</dd>
+			<dt>OS:</dt><dd>Windows(9), OSX(8), Linux(6);</dd>
 		</dl>
 		<h4>}</h4>
 	</section>
@@ -222,13 +222,13 @@
 		<img src="logo" alt="Skype icon">
 		<p>skelogh</p>
 	</section>
-	<button type="button" onclick="window.location='#next'">}</button>
+	<button id="next" type="button"></button>
 		<!--slideshow end-->
 	<!--body end-->
 
 	<!-- footer start-->
 	<hr />
-	<button id="footBtn">
+	<button id="footBtn" alt="Pull me!" title="Pull me!"></button>
 	<footer>
 		<section id="footNotes">
 			<p>Thanks for visiting my portfolio, I'll be glad to talk with you in case of further information required.</p>

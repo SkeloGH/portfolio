@@ -1,5 +1,5 @@
 
-/* Color names, abbreviations in camelCase: 
+/* Color names, abbreviations in CamelCase: 
 
 	Gy: gray;		M: medium; <- both position & intensity
 	Bl: blue;		D: deep;   <- intensity
@@ -26,13 +26,14 @@
 
 .Altfont{ 			font-family: "Calibri";}
 .BlockFix{			display: block; overflow: hidden}
+.BdZ{ 				border: none; }
 .ClearFix { 		clear: both;}
 .EmRst{				line-height: 1em}
 .FLeft{				float:left;}
 .FtRst{				font-size: @BFU; font-weight: bold; font-family: Georgia}
 .FtWN{ 				font-weight: normal;}
 .MgZ{				margin:0}
-.Lean{      		.MgZ; .PgZ; .EmRst; }        /* Cleans the element */
+.Lean{      		.MgZ; .PgZ; .EmRst; .BdZ;}        /* Cleans the element */
 .PgZ{				padding: 0}
 .ShadeMe(@X:1px, @Y:1px, @S:1px, @C:@GyT){ text-shadow: @X @Y @S @C }
 .SetFont(@FSX:1){ 	font-size: @BFU*@FSX; }

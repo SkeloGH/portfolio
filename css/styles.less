@@ -1,7 +1,7 @@
 @import "theme";
 
 /* let's add some styles :D */
-body{	background: @LGy; .Lean; .FtRst; min-width:@BGU*196; text-align: center; }
+body{	background: @LGy; .Lean; .FtRst; min-width:@BGU*196; text-align: right; }
 
 /* layout header styles */
 header { 	
@@ -10,7 +10,6 @@ header {
 	padding-bottom: @BGU;
 	width: auto;
 	
-	hgroup{	height: auto; width:auto; .BlockFix;  }
 
 	figure{
 		.Lean; 	.FLeft;
@@ -22,7 +21,8 @@ header {
 		img { width: @BGU*30; }
 	}
 
-	br{ .Lean; line-height: @BLH*3; }
+	hgroup{	height: auto; width:auto; .BlockFix;  }
+
 
 	h1{	
 		@FSX: 2.9;  /*				font-size zoom 		*/
@@ -35,6 +35,8 @@ header {
 			&:after{.gradifyThis;.ShadeMe;}
 		}
 	}
+	
+	br{ .Lean; line-height: @BLH*3; }
 
 	/*********** big heading letters *********/
 	h2{	
@@ -77,11 +79,9 @@ header {
 
 
 section { 		/* section module global attributes */
-	.BlockFix;
-	.FLeft;
  }
 #steps{
-
+	min-height: @BGU*69;
 	min-width:(@GridCol*5)+(@GridSp*5);
 	margin: @BGU*2 0 0 @BGU*6;
 	padding-top: @BGU*25;
@@ -114,18 +114,115 @@ nav{
 	width:@GridCol+@GridSp*2+@BGU;   /* just because ;) */
 
 	button{
-		@FSX: 5.2; @X:-1px; @Y:1px; @S:1px; @C:rgba(21, 30, 34, 0.5);
+		@FSX: 5.2; @X:0px; @Y:1px; @S:1px; @C:rgba(21, 30, 34, 0.5);
 		.Lean;.BlockFix;.FtRst;.SetFont(@FSX);.ShadeMe(@X, @Y, @S, @C);
 		color: rgba(227, 231, 232, .9);
+		cursor: pointer;
 		background: none;
-		border: none;
 		height: @BGU*11.6;
+		position: relative;
 		width: @GridCol;
-	}
-		.active{
-			@X:-1px; @Y:1px; @S:3px; @C:@MGy;
+		z-index:1;
+
+		&:hover, &:before, &:after {
+			@X:-1px; @Y:1px; @S:2px; @C:@LGnT;
 			.ShadeMe(@X, @Y, @S, @C);
 			color: @DBlB;
 		}
+		&:after {
+		    left: 18px;
+		    top: 5px;
+		}
+		
+		&:before, &:after {
+			@X:-1px; @Y:2px; @S:2px; @C:@LGy;
+			.ShadeMe(@X, @Y, @S, @C);
+		    color: rgba(227, 231, 232, .9);
+		    content: attr(content);
+		    font-size: @BFU*5;
+		    position: absolute;
+		    z-index: -1;
+		}
+		
+		&:before {
+		    left: 20px;
+		    top: 3px;
+		}
+	}
+		.active{
+			@X:-1px; @Y:1px; @S:2px; @C:@MGy;
+			.ShadeMe(@X, @Y, @S, @C);
+			color: @DBlB;
+			position: relative;
+			z-index: 100;
+		}
+}
+#prev, #next{
+	.Lean;.FLeft;
+	color: rgba(227, 231, 232, .9);
+	height: @BGU*75;
+	width: @BGU*8;
+	
+}
+#prev{
+	background: transparent url('../img/sprites.png') -100px -260px;
+	margin: @BGU*5 @BGU*8 0 @BGU*-3;
+	&:hover, &active{	background: transparent url('../img/sprites.png') -200px -260px; cursor: pointer;	}
+}
+#next{
+	background: transparent url('../img/sprites.png') -150px -260px;
+	margin: @BGU*5 0 0 @BGU*3;
+	&:hover, &active{	background: transparent url('../img/sprites.png') -250px -260px; cursor: pointer;	}
 }
 hr{.ClearFix; }
+
+/* 	 section elements - details containers	*/
+section{
+	.BlockFix;
+	.FLeft;
+	min-height: @BGU*94;
+	display: none;
+	margin-top: @BGU*4;
+	min-width:30%;
+	max-width:33%;
+	position: relative;
+
+	h4{
+		@FSX: 3.5; @X:-1px; @Y:1px; @S:2px; @C:rgba(21, 30, 34, 0.5);
+		.Lean; .EmRst; .FLeft; .SetFont(@FSX);.ShadeMe(@X, @Y, @S, @C);
+		color: @DBlB;
+		font-weight: normal;
+		text-align: left;
+		width: 100%;
+		
+		&:nth-child(1){
+			margin-bottom:30px;
+		}
+		&:nth-child(n+2){
+			bottom: @BGU*15;
+			position: absolute;
+		}
+	}
+	dl{
+		display: inline-block;
+		width: 100%;
+	}
+	dl dt, dl dd{
+		@FSX: 1.6;
+		.Altfont; .Lean; .EmRst; .FLeft; .SetFont(@FSX);
+		.Lean; .FLeft;
+		line-height:1.3em;
+		text-align: left;
+	}
+	dl dt{
+		width: 35%;
+		color: @GyB;
+	}
+	dl dd{
+		width: 65%;
+	}
+}
+	#steps, .active{
+		display: block;
+	}
+	
