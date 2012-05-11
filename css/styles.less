@@ -45,11 +45,11 @@ header {
 		height: @BGU*28; 
 		margin-top: @BGU*6.8; 
 		width: @BGU*14; 
+		&:not(.active){ display: none}
 		
 		a{	.gradifyMe;	.SetFont(@FSX);
 			&:link, &:visited, &:hover, &:active {	color: @DBlB;}
 			&:after{.gradifyThis;.ShadeMe; color: @DBlB; }/* gradient color */
-			&:not(.active){ display: none}
 		}
 	}
 
@@ -226,3 +226,102 @@ section{
 		display: block;
 	}
 	
+
+
+
+/*********** mobile ********/
+
+@media screen and (max-width: 970px) {
+	html{
+		text-align: center;
+	}
+	body{
+		.Lean;
+		width:375px;
+		max-width:375px;
+		min-width:375px;
+		text-align: center;
+	}
+
+	header{
+		text-align: center;
+		max-width:375px;
+		
+		figure{
+			.Lean; .ClearFix;
+			-webkit-margin-before: 1em;
+			-webkit-margin-after: 1em;
+			-webkit-margin-start: 40px;
+			-webkit-margin-end: 40px;
+		}
+		hgroup{
+			.ClearFix;
+			max-width:750px;
+			text-align: center;
+			
+			h1, h2, h3, a{
+				.Lean; .FLeft;
+			    display: none;
+			    height:1em;
+			    line-height: 1em;
+			    margin: 0;
+			    max-width: 190px;
+			    padding: 0;
+			}
+			h1, h2, h3, a{
+				color:#000;
+			    font-size: 30px;
+				text-decoration:none;
+			}
+			h1{
+				max-width:100%;
+				width: 100%;
+				text-align: center;
+				position: relative;
+				a{
+					position:absolute;
+					left: 50%;
+					margin-left:-36%;
+				}
+			}
+			h2, h3{
+				min-width:30px;
+				max-width:30px;
+				width: auto;
+			}
+			
+			.active, .active a, h3{
+				display: block;
+			}
+		}
+	}
+	
+	#steps, #prev, #next, nav button:first-letter{
+		display:none;
+	}
+
+	nav button{
+		height:50px;
+		padding: 0;
+		margin: 10px;
+		width: 80px;
+	}
+	
+
+	section{
+		text-align: left;
+		width:100%;
+	}
+	section dl dt{
+		display: inline-block;
+		float: left;
+		width: 40%;
+		margin: 0 0 0 5%;
+	}
+	section dl dd{
+		display: inline-block;
+		width: 55%;
+		float: left;
+		margin: 0;
+	}
+}
