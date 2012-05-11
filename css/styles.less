@@ -231,21 +231,21 @@ section{
 
 /*********** mobile ********/
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 500px) {
 	html{
 		text-align: center;
 	}
 	body{
 		.Lean;
-		width:375px;
-		max-width:375px;
-		min-width:375px;
+		width:@MobW;
+		max-width:@MobW;
+		min-width:@MobW;
 		text-align: center;
 	}
 
 	header{
 		text-align: center;
-		max-width:375px;
+		max-width:@MobW;
 		
 		figure{
 			.Lean; .ClearFix;
@@ -254,9 +254,11 @@ section{
 			-webkit-margin-start: 40px;
 			-webkit-margin-end: 40px;
 		}
+
 		hgroup{
 			.ClearFix;
-			max-width:750px;
+			max-width:@BGU*150;
+			padding: 0 @BGU*4;
 			text-align: center;
 			
 			h1, h2, h3, a{
@@ -265,18 +267,17 @@ section{
 			    height:1em;
 			    line-height: 1em;
 			    margin: 0;
-			    max-width: 190px;
+			    max-width: @BGU*38;
 			    padding: 0;
 			}
 			h1, h2, h3, a{
-				color:#000;
-			    font-size: 30px;
+				font-size: @BGU*6;
 				text-decoration:none;
 			}
 			h1{
-				width: 100%;
 				text-align: center;
 				position: relative;
+				width: 100%;
 			}
 			br{
 				display: none;
@@ -285,12 +286,18 @@ section{
 				min-width:15px;
 				width: auto;
 			}
-			
+			hr{
+				.FLeft; 
+				border: solid 1px @MGy;
+				margin-top: @BGU;
+				width:100%;
+			}
 			.active, .active a, h3{
 				display: block;
 			}
 		}
 	}
+	
 	
 	#steps, #prev, #next, nav button:first-letter{
 		display:none;
@@ -298,27 +305,72 @@ section{
 
 	nav button{
 		height:50px;
-		padding: 0;
 		margin: 10px;
-		width: 80px;
+		padding: 0;
+		width: @BGU*13;
 	}
 	
 
 	section{
-		text-align: left;
-		min-width: 69%;
 		max-width: 74%;
+		min-height:@BGU*84;
+		min-width: 69%;
+		text-align: left;
+		
+		dl{
+			position: relative;
+			
+			dt{
+				display: inline-block;
+				float: left;
+				margin: 0 0 0 5%;
+				width: 40%;
+			}
+			
+			dd{
+				display: inline-block;
+				float: left;
+				margin: 0;
+				width: 55%;
+			}
+		}
+		
+		h4{
+			&:nth-child(1){
+				margin-bottom:@BGU*3;
+			}
+			&:nth-child(n+2){
+				bottom: @BGU;
+				position: absolute;
+			}
+		}
 	}
-	section dl dt{
-		display: inline-block;
-		float: left;
-		width: 40%;
-		margin: 0 0 0 5%;
-	}
-	section dl dd{
-		display: inline-block;
-		width: 55%;
-		float: left;
-		margin: 0;
+	#Gallery{
+		text-align: center;
+
+		h4, p{
+			text-align: center;
+			display: none;
+			position: relative;
+			margin: 0 0 @BGU*5 0;
+		}
+		#picContainer{
+			-moz-box-shadow:    inset 0 0 @BGU*2 @MGy;
+			-moz-border-radius: @BGU*2;
+		  	-webkit-box-shadow: inset 0 0 @BGU*2 @MGy;
+		  	-webkit-border-radius: @BGU*2;
+		  	box-shadow: inset 0 0 @BGU*2 @MGy;
+			border-radius: @BGU*2;
+		  	height: @BGU*30;
+		  	margin:@BGU*0 @BGU*0 @BGU*10 @BGU*0;
+
+		   &.pic1{
+		   		background-image: url('../img/sprites.png');
+				background-position: -330px 10px;
+		   }
+		}
+		.active{
+				display: inline;
+		}
 	}
 }

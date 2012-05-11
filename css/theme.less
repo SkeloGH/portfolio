@@ -1,4 +1,3 @@
-
 /* Color names, abbreviations in CamelCase: 
 
 	Gy: gray;		M: medium; <- both position & intensity
@@ -23,6 +22,7 @@
 @BFU: 10px;							/* Basic font unit */
 @BLH: 1em;							/* Basic line height */
 @FSX: 1;							/* Default Font-size zoom, used when multiplying */
+@MobW: @BGU*75; 					/* Default mobile size */
 
 .Altfont{ 			font-family: "Calibri";}
 .BlockFix{			display: block; overflow: hidden}
@@ -50,7 +50,6 @@
 
 /* These ones are set to apply gradient styles, 
 	see styles.less for example of how to apply it */
-/* first we initialize the element */
 .gradifyInit{   display: block; float: left; position: relative;}
 .gradifyMe{
 	text-decoration:none;
