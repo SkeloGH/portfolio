@@ -22,8 +22,9 @@
 @BFU: 10px;							/* Basic font unit */
 @BLH: 1em;							/* Basic line height */
 @FSX: 1;							/* Default Font-size zoom, used when multiplying */
-@MobW: @BGU*75; 					/* Default mobile size */
+@MobW: @BGU*64; 					/* Default mobile size */
 
+.active{			display: block; }
 .Altfont{ 			font-family: "Calibri";}
 .BlockFix{			display: block; overflow: hidden}
 .BdZ{ 				border: none; }
@@ -37,6 +38,7 @@
 .PgZ{				padding: 0}
 .ShadeMe(@X:1px, @Y:1px, @S:1px, @C:@GyT){ text-shadow: @X @Y @S @C }
 .SetFont(@FSX:1){ 	font-size: @BFU*@FSX; }
+.Sprite(@M:0,@E:0){ background: url('../img/sprites.png') @M @E;}
 
 /* gradients */
 .GySh{ /* shadow-gradient */

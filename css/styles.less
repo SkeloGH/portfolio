@@ -1,7 +1,8 @@
 @import "theme";
 
 /* let's add some styles :D */
-body{	background: @LGy; .Lean; .FtRst; min-width:@BGU*196; text-align: right; }
+body{	background: @LGy; .Lean; .FtRst; width:100%; text-align: right; }
+
 
 /* layout header styles */
 header { 	
@@ -12,9 +13,7 @@ header {
 	
 
 	figure{
-		.Lean; 	.FLeft;
-		background-image: url('../img/sprites.png');
-		background-position: 0 0;
+		.Lean;.FLeft;.Sprite;
 		height: @BGU*50;
 		margin: @BGU*2 @BGU*16 0 @BGU*6;
 		width: @BGU*63;
@@ -69,48 +68,20 @@ header {
 	}
 
 	hr{
-		.FLeft; 
+		.FLeft;.EmRst;
 		border: solid @BGU @DBlB;
-		line-height:1em;
 		margin-top: @BGU*.5;
 		width:(@GridCol*7)+(@GridSp*6);
 	}
 } 	/* header end */
 
 
-section { 		/* section module global attributes */
- }
-#steps{
-	min-height: @BGU*69;
-	min-width:(@GridCol*5)+(@GridSp*5);
-	margin: @BGU*2 0 0 @BGU*6;
-	padding-top: @BGU*25;
-	text-align: left;
-
-	h1{	
-		@FSX: 5.5;
-		.Lean;.ClearFix;
-		.SetFont(@FSX); 
-		.ShadeMe;
-		color: @DBlB;
-	}
-
-	h2{	
-		@FSX: 4;
-		.Lean; .ClearFix;	.SetFont(@FSX);
-		.Altfont; .FtWN;
-		color: @GyB;
-		margin-top:@BGU*4;
-	}
-}
 
 /* navigation elements */
 
 nav{
-	.Lean; .FLeft;
-	background-image: url('../img/sprites.png');
-	background-position: 0 -261px;
-	height: @BGU*96;
+	.Lean;.FLeft;.Sprite(0,-260px);
+	height: @BGU*94;
 	width:@GridCol+@GridSp*2+@BGU;   /* just because ;) */
 
 	button{
@@ -165,16 +136,16 @@ nav{
 	
 }
 #prev{
-	background: transparent url('../img/sprites.png') -100px -260px;
+	.Sprite(-100px, -260px);
 	margin: @BGU*5 @BGU*8 0 @BGU*-3;
-	&:hover, &active{	background: transparent url('../img/sprites.png') -200px -260px; cursor: pointer;	}
+	&:hover, &active{	.Sprite(-200px, -260px); cursor: pointer;	}
 }
 #next{
-	background: transparent url('../img/sprites.png') -150px -260px;
-	margin: @BGU*5 0 0 @BGU*3;
-	&:hover, &active{	background: transparent url('../img/sprites.png') -250px -260px; cursor: pointer;	}
+	.Sprite(-150px, -260px);
+	margin: @BGU*5 0 0 @BGU*8;
+	&:hover, &active{	.Sprite(-250px, -260px); cursor: pointer;	}
 }
-hr{.ClearFix; }
+
 
 /* 	 section elements - details containers	*/
 section{
@@ -189,9 +160,8 @@ section{
 
 	h4{
 		@FSX: 3.5; @X:-1px; @Y:1px; @S:2px; @C:rgba(21, 30, 34, 0.5);
-		.Lean; .EmRst; .FLeft; .SetFont(@FSX);.ShadeMe(@X, @Y, @S, @C);
+		.Lean; .EmRst; .FLeft; .SetFont(@FSX);.ShadeMe(@X, @Y, @S, @C);.FtWN;
 		color: @DBlB;
-		font-weight: normal;
 		text-align: left;
 		width: 100%;
 		
@@ -222,6 +192,31 @@ section{
 		width: 65%;
 	}
 	
+	&#steps{
+		.active;
+		min-height: @BGU*69;
+		min-width:(@GridCol*5)+(@GridSp*5);
+		margin: @BGU*2 0 0 @BGU*6;
+		padding-top: @BGU*25;
+		text-align: left;
+
+		h1{	
+			@FSX: 5.5;
+			.Lean;.ClearFix;
+			.SetFont(@FSX); 
+			.ShadeMe;
+			color: @DBlB;
+		}
+
+		h2{	
+			@FSX: 4;
+			.Lean; .ClearFix;	.SetFont(@FSX);
+			.Altfont; .FtWN;
+			color: @GyB;
+			margin-top:@BGU*4;
+		}
+	}
+
 	&#Gallery{
 		text-align: center;
 
@@ -242,27 +237,97 @@ section{
 		  	margin:@BGU*0 @BGU*0 @BGU*4 @BGU*0;
 
 		   &.pic1{
-		   		background-image: url('../img/sprites.png');
-				background-position: -330px 10px;
+		   		.Sprite(-310px, 10px);
 		   }
-		}
-		.active{
-				display: block;
 		}
 	}
 }
 	
-
-	footer section, #steps, .active{
+footer{
+	.ClearFix;
+	overflow: auto;
+	text-align: center;
+	section, .active{
 		display: block;
 	}
+	#footBtn{
+		.Lean;
+		.Sprite(-330px, -150px);
+		height:45px;
+		width:40px;
+	}
+	hr{ .Lean;
+		height:@BGU*8;
+		margin-top:-10px;
+		width:100%;
+		position: relative;
+	  	background-image: ~`"expression(this.runtimeStyle.backgroundImage='none', this.innerHTML = '<img alt=\"\" src=\"http://waw.mx/portfolio/img/sprites.png\">' + this.innerHTML)"`;
+
+		&:before, img {
+		  	clip: rect(738px, 970px, 775px, 9px);
+		    content: url("http://waw.mx/portfolio/img/sprites.png");
+		    left: 50%;
+		    margin-left: -470px;
+		    position: absolute;
+		    top: -748px;
+		}
+	}
+	section{
+		.Lean;
+		min-height: @BGU*20;
+		margin: 0 0 0 30px;
+
+		text-align: left;
+		h5{	
+			@FSX: 2.3;
+			.Lean;.ClearFix;
+			.SetFont(@FSX); 
+			.ShadeMe;.Altfont;.FtWN;
+			color: @DBlB;
+		}
+
+		h6{	
+			@FSX: 1.5;
+			.Lean; .ClearFix;.SetFont(@FSX);.Altfont; .FtWN;
+			color: @MGy;
+			margin-top:@BGU*1.4;
+		}
+		ul{	.Lean;
+			margin: 20px 0 0 10px;
+			li{
+				@FSX: 1.5;
+				.Lean; .SetFont(@FSX);.Altfont; .FtWN;
+				.active;
+				color: @GyB;
+				float: left;
+				list-style: none;
+				width:@BGU*30;
+				&:after{
+					content: " >";
+				}
+			}
+		}
+		&#block1{
+		min-width: @BGU*34;
+			ul, ul li{ width:@BGU*34;}
+		}
+		&#block2{
+			min-width:@BGU*92;
+		}
+		&#block2{
+			min-width:@BGU*34;
+		}
+	}
+}
 	
 
 
 
 /*********** mobile ********/
 
-@media screen and (max-width: 500px) {
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
 	html{
 		text-align: center;
 	}
