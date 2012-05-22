@@ -29,13 +29,16 @@
 .BlockFix{			display: block; overflow: hidden}
 .BdZ{ 				border: none; }
 .ClearFix { 		clear: both;}
+.ClearH{ 			min-height: auto; max-height: auto}
+.ClearW{ 			min-width: auto;max-width: auto;}
+.ClearXY{ 			.ClearW; .ClearH;}
 .EmRst{				line-height: 1em}
 .FLeft{				float:left;}
-.FtRst{				.FtBo; .SetFont; font-family: Georgia}
+.FtRst{				.FtWB; .SetFont; font-family: Georgia}
 .FtWN{ 				font-weight: normal;}
-.FtBo{ 				font-weight: bold;}
-.MgZ{				margin:0}
+.FtWB{ 				font-weight: bold;}
 .Lean{      		.MgZ; .PgZ; .EmRst; .BdZ;}        /* Cleans the element */
+.MgZ{				margin:0}
 .PgZ{				padding: 0}
 .ShadeMe(@X:1px, @Y:1px, @S:1px, @C:@GyT){ text-shadow: @X @Y @S @C }
 .SetFont(@FSX:1){ 	font-size: @BFU*@FSX; }

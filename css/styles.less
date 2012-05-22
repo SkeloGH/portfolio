@@ -1,7 +1,8 @@
 @import "theme";
 
 /* let's add some styles :D */
-body{	background: @LGy; .Lean; .FtRst; width:100%; text-align: right; }
+html{text-align: center;}
+body{	background: @LGy; .Lean; .FtRst; display: inline-block; width:1000px; text-align: right; }
 
 
 /* layout header styles */
@@ -68,7 +69,7 @@ header {
 	}
 
 	hr{
-		.FLeft;.EmRst;
+		.FLeft;.EmRst;.ClearFix;
 		border: solid @BGU @DBlB;
 		margin-top: @BGU*.5;
 		width:(@GridCol*7)+(@GridSp*6);
@@ -293,13 +294,14 @@ footer{
 			margin-top:@BGU*1.4;
 		}
 		ul{	.Lean;
-			margin: 20px 0 0 10px;
+			margin: 10px 0 0 10px;
 			li{
-				@FSX: 1.5;
+				@FSX: 1.6;
 				.Lean; .SetFont(@FSX);.Altfont; .FtWN;
 				.active;
 				color: @GyB;
 				float: left;
+				line-height:1.2em;
 				list-style: none;
 				width:@BGU*30;
 				&:after{
@@ -314,8 +316,14 @@ footer{
 		&#block2{
 			min-width:@BGU*92;
 		}
-		&#block2{
-			min-width:@BGU*34;
+		&#block3{
+			min-width:@BGU*48;
+			figure{
+				.Lean;.Sprite(-330px, -260px);
+				margin-top:20%;
+				height:@BGU*14;
+				width:100%;
+			}	
 		}
 	}
 }
