@@ -221,8 +221,39 @@ section{
 	dl dd{
 		width: 65%;
 	}
+	
+	&#Gallery{
+		text-align: center;
+
+		h4, p{
+			text-align: center;
+			display: none;
+			position: static;
+			margin: 0 0 @BGU*5 0;
+		}
+		div{
+			-moz-box-shadow:    inset 0 0 @BGU*2 @MGy;
+			-moz-border-radius: @BGU*2;
+		  	-webkit-box-shadow: inset 0 0 @BGU*2 @MGy;
+		  	-webkit-border-radius: @BGU*2;
+		  	box-shadow: inset 0 0 @BGU*2 @MGy;
+			border-radius: @BGU*2;
+		  	height: @BGU*30;
+		  	margin:@BGU*0 @BGU*0 @BGU*4 @BGU*0;
+
+		   &.pic1{
+		   		background-image: url('../img/sprites.png');
+				background-position: -330px 10px;
+		   }
+		}
+		.active{
+				display: block;
+		}
+	}
 }
-	#steps, .active{
+	
+
+	footer section, #steps, .active{
 		display: block;
 	}
 	
@@ -231,7 +262,24 @@ section{
 
 /*********** mobile ********/
 
-@media screen and (max-width: 500px) {
+/*  TARGETTING TO THE IPHONE
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) 
+
+and (max-width: 480px) 
+{
+
+	TARGETTING IPHONE END */
+@media only screen 
+	and (min-device-width : 320px)
+	and (max-device-width : 480px)
+{
+	p, div, h1{
+    	-webkit-text-size-adjust:none;
+	}
+	
 	html{
 		text-align: center;
 	}
@@ -344,33 +392,7 @@ section{
 				position: absolute;
 			}
 		}
-	}
-	#Gallery{
-		text-align: center;
 
-		h4, p{
-			text-align: center;
-			display: none;
-			position: relative;
-			margin: 0 0 @BGU*5 0;
-		}
-		#picContainer{
-			-moz-box-shadow:    inset 0 0 @BGU*2 @MGy;
-			-moz-border-radius: @BGU*2;
-		  	-webkit-box-shadow: inset 0 0 @BGU*2 @MGy;
-		  	-webkit-border-radius: @BGU*2;
-		  	box-shadow: inset 0 0 @BGU*2 @MGy;
-			border-radius: @BGU*2;
-		  	height: @BGU*30;
-		  	margin:@BGU*0 @BGU*0 @BGU*10 @BGU*0;
 
-		   &.pic1{
-		   		background-image: url('../img/sprites.png');
-				background-position: -330px 10px;
-		   }
-		}
-		.active{
-				display: inline;
-		}
 	}
 }
