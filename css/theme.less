@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Color names, abbreviations in CamelCase: 
 
 	Gy: gray;		M: medium; <- both position & intensity
@@ -62,4 +63,76 @@
 	content: attr(title);		
 	position: absolute;
 	top:0; left: 0;
+=======
+/* Color names, abbreviations in CamelCase: 
+
+	Gy: gray;		M: medium; <- both position & intensity
+	Bl: blue;		D: deep;   <- intensity
+	Gn: green;		L: light;  <- intensity
+	Rd: red;		T: top;    <- position
+					B: bottom; <- position 
+*/
+@LGy: #e6e6e6;	  @MGy: #c8c8c8;  /* used for making shadows, and body bg*/
+@LBlT: #e2f1f4;   @LBlB: #d5dddf; /* used for menu item title */
+@DBlT:#202e31;	  @DBlB:#131b1d;  /* used for title gradient */
+@MLBl: #6ba9cd;   @DRd: #c41016;  /* header borders and red sign */
+@GyT: #5a696c;    @GyB: #4e5658;  /* used for subtitle */
+@LGnT: #dbe3e5;   @LGnL: #d4d9da; /* used for main menu items */
+@DGnT: #aacfd6;   @DGnL: #8da1a5; /* used for active selection */
+@DGy: #393939;    @MGy: #737373;  /* footer Titles and links */
+
+/* Basic elements, define the theme specs */
+@BGU: 5px;							/* Basic graphics unit */
+@GridCol: 70px;						/* Grid column is 70px wide */
+@GridSp: 10px;						/* Space between columns */
+@BFU: 10px;							/* Basic font unit */
+@BLH: 1em;							/* Basic line height */
+@FSX: 1;							/* Default Font-size zoom, used when multiplying */
+@MobW: @BGU*64; 					/* Default mobile size */
+
+.active{			display: block; }
+.Altfont{ 			font-family: "Calibri";}
+.BlockFix{			display: block; overflow: hidden}
+.BdZ{ 				border: none; }
+.ClearFix { 		clear: both;}
+.ClearH{ 			min-height: auto; max-height: auto}
+.ClearW{ 			min-width: auto;max-width: auto;}
+.ClearXY{ 			.ClearW; .ClearH;}
+.EmRst{				line-height: 1em}
+.FLeft{				float:left;}
+.FtRst{				.FtWB; .SetFont; font-family: Georgia}
+.FtWN{ 				font-weight: normal;}
+.FtWB{ 				font-weight: bold;}
+.Lean{      		.MgZ; .PgZ; .EmRst; .BdZ;}        /* Cleans the element */
+.MgZ{				margin:0}
+.PgZ{				padding: 0}
+.ShadeMe(@X:1px, @Y:1px, @S:1px, @C:@GyT){ text-shadow: @X @Y @S @C }
+.SetFont(@FSX:1){ 	font-size: @BFU*@FSX; }
+.Sprite(@M:0,@E:0){ background: url('../img/sprites.png') @M @E;}
+
+/* gradients */
+.GySh{ /* shadow-gradient */
+	background: @MGy;
+	background: -moz-linear-gradient(top, @MGy, @LGy);
+	background: -webkit-gradient(linear, left top, left bottom, from(@MGy), to(@LGy));
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@MGy', endColorstr='@LGy');
+}
+
+/*****************		font styles		*******/
+
+/* These ones are set to apply gradient styles, 
+	see styles.less for example of how to apply it */
+.gradifyInit{   display: block; float: left; position: relative;}
+.gradifyMe{
+	text-decoration:none;
+	font-size: @BFU*3.829;
+	position: absolute;
+	top:0; left: 0;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
+}
+.gradifyThis{
+	content: attr(title);		
+	position: absolute;
+	top:0; left: 0;
+>>>>>>> f8b1be3b6132d8318a8c57dbad69bdf76c1dfa64
 }
