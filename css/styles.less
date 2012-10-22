@@ -1,5 +1,19 @@
 @import "theme";
 
+
+/************************Index*********************************/
+/*                                                            */
+/*          layout header styles                              */
+/*			font-size zoom									  */
+/*			big heading letters								  */
+/*			header less-than sign 							  */
+/* 			header end 										  */
+/* 			navigation elements 							  */
+/* 	 		section elements - details containers	          */
+/* 			mobile											  */
+/*			bracket buttons									  */
+/*			Galleries settings								  */
+
 /* let's add some styles :D */
 html{text-align: center;}
 body{	background: @LGy; .Lean; .FtRst; display: inline-block; width:1000px; text-align: right; }
@@ -129,6 +143,8 @@ nav{
 			z-index: 100;
 		}
 }
+
+/* 		bracket buttons  	*/
 #prev, #next{
 	.Lean;.FLeft;
 	color: rgba(227, 231, 232, .9);
@@ -217,22 +233,24 @@ section{
 			margin-top:@BGU*4;
 		}
 	}
-
-	&#Gallery{
+/* 		Galleries settings 		*/
+	&#Gallery,&#Tools{
 		text-align: center;
 
-		h4, p{
+		h4, p, img{
 			text-align: center;
 			display: none;
 			position: static;
 			margin: 0 0 @BGU*5 0;
+			&.active{display: block;}
 		}
+		li:nth-of-type(1){
+		   		.Sprite(-310px, 10px);
+		   }
 		div{
-			-moz-box-shadow:    inset 0 0 @BGU*2 @MGy;
 			-moz-border-radius: @BGU*2;
-		  	-webkit-box-shadow: inset 0 0 @BGU*2 @MGy;
-		  	-webkit-border-radius: @BGU*2;
-		  	box-shadow: inset 0 0 @BGU*2 @MGy;
+			-webkit-border-radius: @BGU*2;
+			border: solid 1px @MLGy;
 			border-radius: @BGU*2;
 		  	height: @BGU*30;
 		  	margin:@BGU*0 @BGU*0 @BGU*4 @BGU*0;
@@ -396,9 +414,6 @@ and (max-device-width : 480px) {
 				margin-top: @BGU;
 				width:100%;
 			}
-			.active, .active a, h3{
-				display: block;
-			}
 		}
 	}
 	
@@ -451,4 +466,10 @@ and (max-device-width : 480px) {
 
 
 	}
+}
+
+/* 	Mobile end 	*/
+
+.active, .active a, h3{
+	display: block;
 }
